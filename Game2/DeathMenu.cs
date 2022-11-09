@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class PauseMenu : MonoBehaviour
+public class DeathMenu : MonoBehaviour
 {
     public static bool isPaused = false;
-    public GameObject PauseMenuUI;
+    public GameObject DeathMenuUI;
 
     GameObject nave;
     GameObject camara;
@@ -29,7 +29,7 @@ public class PauseMenu : MonoBehaviour
         ObstacleGeneratorScript = nave.GetComponent<ObstacleGenerator>(); // referencia generador de obstaculos
         VidasUI = GameObject.Find("VidasUI");
 
-        PauseMenuUI.SetActive(false);
+        DeathMenuUI.SetActive(false);
         VidasUI.SetActive(true);
         CameraPointerManagerScript.enabled = false;
     }
@@ -53,11 +53,11 @@ public class PauseMenu : MonoBehaviour
 
     public void Pause()
     {
-        if (ShipMovement.distancia > ShipMovement.actualHighScore)
+        if (ShipMovement.distancia > ShipMovement.distanciaHS)
         {
-            PlayerPrefs.SetInt("HighScoreGame2", ShipMovement.distancia);
-            
-            ShipMovement.actualHighScore = PlayerPrefs.GetInt("HighScoreGame2", 0);
+            PlayerPrefs.SetInt("HSDistanciaGame2", ShipMovement.distancia);
+            PlayerPrefs.Save();
+            ShipMovement.distanciaHS = PlayerPrefs.GetInt("HSDistanciaGame2", 0);
         }
 
         ShipMovementScript.enabled = false;
@@ -67,7 +67,7 @@ public class PauseMenu : MonoBehaviour
         ObsMovement.velocidad = 0f;
         // Time.timeScale = 1f;
         VidasUI.SetActive(false);
-        PauseMenuUI.SetActive(true);
+        DeathMenuUI.SetActive(true);
         CameraPointerManagerScript.enabled = true;
         isPaused = true;
     }
@@ -92,7 +92,7 @@ public class PauseMenu : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        PlayerPrefs.SetInt("HighScoreGame2", ShipMovement.actualHighScore);
+        PlayerPrefs.SetInt("HSDistanciaGame2", ShipMovement.distanciaHS);
         PlayerPrefs.Save();
     }
 }

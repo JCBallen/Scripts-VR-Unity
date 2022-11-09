@@ -13,7 +13,7 @@ public class VidasUI : MonoBehaviour
     void Start()
     {
 
-        ShipMovement.actualHighScore = PlayerPrefs.GetInt("HighScoreGame2", 0);
+        ShipMovement.distanciaHS = PlayerPrefs.GetInt("HSDistanciaGame2", 0);
     }
 
     // Update is called once per frame
@@ -25,9 +25,9 @@ public class VidasUI : MonoBehaviour
             PuntosTxt.text = $"Puntos: {ShipMovement.puntos}";
             DistanciaTxt.text = $"{ShipMovement.distancia}";
             // Si pasas el highscore muestralo en vivo 
-            if (ShipMovement.distancia < ShipMovement.actualHighScore)
+            if (ShipMovement.distancia < ShipMovement.distanciaHS)
             {
-                HighTxt.text = $"Max: {ShipMovement.actualHighScore}";
+                HighTxt.text = $"Max: {ShipMovement.distanciaHS}";
             }
             else
             {

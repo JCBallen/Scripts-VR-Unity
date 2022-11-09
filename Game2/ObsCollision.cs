@@ -11,7 +11,6 @@ public class ObsCollision : MonoBehaviour
     private void Awake()
     {
         nave = GameObject.FindGameObjectWithTag("Ship");
-        // ShipMovementScript = nave.GetComponent<ShipMovement>();
     }
 
     private void OnTriggerEnter(Collider obj)

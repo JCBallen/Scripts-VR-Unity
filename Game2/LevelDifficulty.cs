@@ -28,6 +28,6 @@ public class LevelDifficulty : MonoBehaviour
     void increaseDifficulty()
     {
         value++;
-        print($"hard: {value}");
+        // print($"hard: {value}");
     }
 }

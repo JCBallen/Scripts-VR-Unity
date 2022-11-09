@@ -19,8 +19,8 @@ public class CamMovement : MonoBehaviour
     {
         // Tomamos como referencia la posicion de la nave para poner la camara
         auxPos = shipPos.position / 1f;
-        auxPos.y = auxPos.y + 2;
-        auxPos.z = 3;
+        auxPos.y = auxPos.y + 2; // +2
+        auxPos.z = 3; // 3
         transform.position = auxPos;
 
     }

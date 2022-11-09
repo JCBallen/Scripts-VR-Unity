@@ -13,7 +13,7 @@ public class ShipMovement : MonoBehaviour
     public static int vidas;
     public static int puntos;
     public static int distancia;
-    public static int actualHighScore;
+    public static int distanciaHS;
 
 
     // private float x;
