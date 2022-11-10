@@ -72,7 +72,7 @@ public class ObstacleGenerator : MonoBehaviour
         obstacle.name = "PrefabObstacle";
 
         // Destruye el obstaculo a los n segundos
-        try { Destroy(obstacle, 5f); } catch { print("Ya se habia destruido"); }
+        try { Destroy(obstacle, 7f); } catch { print("Ya se habia destruido"); }
 
 
     }

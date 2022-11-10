@@ -21,7 +21,7 @@ public class BaseGenerator : MonoBehaviour
     {
         if (aux)
         {
-            Invoke("spawnObs", 1f);
+            Invoke("spawnObs", 0.5f);
             aux = false;
         }
     }
@@ -39,7 +39,7 @@ public class BaseGenerator : MonoBehaviour
         base_pos = transform.position;
         base_pos.x = randX;
         base_pos.y = -3;
-        base_pos.z = base_pos.z + 10; // distancia en la que aparecera el primer obs
+        base_pos.z = base_pos.z + 20; // distancia en la que aparecera el primer obs
 
         base_rot = Quaternion.Euler(0, 0, 0);
 

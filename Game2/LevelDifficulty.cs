@@ -14,7 +14,7 @@ public class LevelDifficulty : MonoBehaviour
     }
     void Update()
     {
-        if (ShipMovement.distancia % 100 == 0 && aux < 0)
+        if (ShipMovement.distancia % 200 == 0 && aux < 0 && value < 20)
         {
             increaseDifficulty();
             aux = 100;

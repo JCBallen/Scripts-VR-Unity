@@ -21,7 +21,7 @@ public class PointsGenerator : MonoBehaviour
     {
         if (aux)
         {
-            Invoke("spawnPts", 3f);
+            Invoke("spawnPts", 4f);
             aux = false;
         }
     }
@@ -30,7 +30,7 @@ public class PointsGenerator : MonoBehaviour
     {
         // Limites de juego
         randX = Random.Range(-20, 20);
-        randY = Random.Range(0, 20);
+        randY = Random.Range(1, 20);
 
         aux = true;
         // Encuentra el objeto obstaculos para ser el padre
