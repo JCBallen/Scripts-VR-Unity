@@ -25,6 +25,6 @@ public class ObsMovement : MonoBehaviour
         aum = new Vector3(0, 0, velocidad * Time.deltaTime);
         transform.Translate(aum);
         // Calculo de la distancia recorrido
-        ShipMovement.distancia = -(int)ObsPos.position.z + 23;
+        ShipMovement.distancia = -(int)ObsPos.position.z + 23; // desfase para igualar a 0
     }
 }

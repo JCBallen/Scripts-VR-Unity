@@ -6,6 +6,7 @@ public class BaseGenerator : MonoBehaviour
 {
     // Tres tipos diferentes de obtaculos
     public GameObject BasePrefab;
+    public GameObject Ball;
     bool aux = true;
     // Variables para almacenar randoms para las posiciones, y objeto
     float randX;
@@ -17,11 +18,11 @@ public class BaseGenerator : MonoBehaviour
     Transform parent_transform;
 
 
-    private void Update()
+    void Update()
     {
-        if (aux)
+        if ((int)transform.position.z % 10 == 0)
         {
-            Invoke("spawnObs", 0.5f);
+            Invoke("spawnObs", 0);
             aux = false;
         }
     }
@@ -39,7 +40,7 @@ public class BaseGenerator : MonoBehaviour
         base_pos = transform.position;
         base_pos.x = randX;
         base_pos.y = -3;
-        base_pos.z = base_pos.z + 20; // distancia en la que aparecera el primer obs
+        base_pos.z = Ball.transform.position.z + 10; // distancia en la que aparecera el primer obs
 
         base_rot = Quaternion.Euler(0, 0, 0);
 

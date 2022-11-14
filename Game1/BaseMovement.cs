@@ -14,7 +14,7 @@ public class BaseMovement : MonoBehaviour
     void Start()
     {
 
-        velocidad = -10f;
+        velocidad = -10f; // ! se mueve n unidades por segundo (10)
         // el primer valor es la "velocidad" a la que se mueve en environment
 
     }
@@ -25,6 +25,6 @@ public class BaseMovement : MonoBehaviour
         aum = new Vector3(0, 0, velocidad * Time.deltaTime);
         transform.Translate(aum);
         // Calculo de la distancia recorrido
-        BallMovement.distancia = -(int)BasePos.position.z + 1;
+        BallMovement.distancia = -(int)BasePos.position.z + 1; // desfase para igualar a 0
     }
 }
