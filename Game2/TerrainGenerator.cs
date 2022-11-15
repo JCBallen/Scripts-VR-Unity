@@ -34,6 +34,9 @@ public class TerrainGenerator : MonoBehaviour
                 Terrain_parent); // padre
 
             terreno.name = "PrefabTrerrain";
+
+            // Destruye el obstaculo a los n segundos
+        try { Destroy(terreno, 50f); } catch { print("Ya se habia destruido"); }
         }
     }
 }

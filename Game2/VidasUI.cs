@@ -12,7 +12,6 @@ public class VidasUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         ShipMovement.distanciaHS = PlayerPrefs.GetInt("HSDistanciaGame2", 0);
     }
 
@@ -23,7 +22,8 @@ public class VidasUI : MonoBehaviour
         {
             VidasTxt.text = $"Vidas: {ShipMovement.vidas}";
             PuntosTxt.text = $"Puntos: {ShipMovement.puntos}";
-            DistanciaTxt.text = $"{ShipMovement.distancia}";
+            DistanciaTxt.text = $"fps {Mathf.Pow(Time.deltaTime,-1)}";
+            // DistanciaTxt.text = $"{ShipMovement.distancia}";
             // Si pasas el highscore muestralo en vivo 
             if (ShipMovement.distancia < ShipMovement.distanciaHS)
             {

@@ -20,9 +20,9 @@ public class BaseGenerator : MonoBehaviour
 
     void Update()
     {
-        if ((int)transform.position.z % 10 == 0)
+        if (aux)
         {
-            Invoke("spawnObs", 0);
+            Invoke("spawnObs", 0.1f);
             aux = false;
         }
     }
@@ -54,7 +54,7 @@ public class BaseGenerator : MonoBehaviour
 
         bases.name = "PrefabBase";
 
-        // Destruye el obstaculo a los n segundos
+        // Destruye la base a los n segundos
         try { Destroy(bases, 5f); } catch { print("Ya se habia destruido"); }
 
 

@@ -42,7 +42,7 @@ public class BallMovement : MonoBehaviour
         
         y = -2.3f + initialVel * (auxTime) + acceleration * Mathf.Pow(auxTime, 2) / 2;
 
-        if (transform.position.y <= -2.3)
+        if (transform.position.y <= -5 || BaseCollision.isColliding)
         {
             Jump();
         }
