@@ -30,7 +30,7 @@ public class HeartsGenerator : MonoBehaviour
     {
         // Limites de juego
         randX = Random.Range(-20, 20);
-        randY = Random.Range(0, 20);
+        randY = Random.Range(1, 20);
 
         aux = true;
         // Encuentra el objeto obstaculos para ser el padre
@@ -44,7 +44,7 @@ public class HeartsGenerator : MonoBehaviour
         hearts_pos.y = randY;
         hearts_pos.z = hearts_pos.z + 50; // distancia en la que aparece el primer punto
 
-        hearts_rot = Quaternion.Euler(0, 0, 0);
+        hearts_rot = Quaternion.Euler(0, 180, 0);
 
 
 

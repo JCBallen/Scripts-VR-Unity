@@ -6,6 +6,7 @@ public class ObsMovement : MonoBehaviour
 {
     // ! Modificar La valocidad desde aqui
     public static float velocidad;
+    public static float default_velocity;
     public Transform ObsPos;
 
     Vector3 aum;
@@ -14,7 +15,8 @@ public class ObsMovement : MonoBehaviour
     void Start()
     {
 
-        velocidad = -20f;
+        default_velocity = -20f;
+        velocidad = default_velocity;
         // el primer valor es la "velocidad" a la que se mueve en environment
 
     }
@@ -24,7 +26,7 @@ public class ObsMovement : MonoBehaviour
     {
         aum = new Vector3(0, 0, velocidad * Time.deltaTime);
         transform.Translate(aum);
-        // Calculo de la distancia recorrido
+        // Calculo de la distancia recorrido (xd no se por que lo puse aqui)
         ShipMovement.distancia = -(int)ObsPos.position.z + 23; // desfase para igualar a 0
     }
 }

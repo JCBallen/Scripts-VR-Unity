@@ -24,7 +24,7 @@ public class GraphQuality : MonoBehaviour
         if (isHighQL)
         {
             Vector3 a = indicador.anchoredPosition3D;
-            Vector3 b = new Vector3(indicador.anchoredPosition3D.x, 39f, indicador.anchoredPosition3D.z);
+            Vector3 b = new Vector3(indicador.anchoredPosition3D.x, 40f, indicador.anchoredPosition3D.z);
             indicador.anchoredPosition3D = Vector3.Lerp(a, b, t);
         }
         else

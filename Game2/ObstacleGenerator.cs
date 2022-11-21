@@ -57,7 +57,7 @@ public class ObstacleGenerator : MonoBehaviour
         obstacle_pos = transform.position;
         obstacle_pos.x = randX;
         obstacle_pos.y = randY;
-        obstacle_pos.z = obstacle_pos.z + 100; // distancia en la que aparecera el primer obs
+        obstacle_pos.z = obstacle_pos.z + 200; // distancia en la que aparecera el primer obs
 
         obstacle_rot = Quaternion.Euler(0, 0, 0);
 
@@ -72,7 +72,7 @@ public class ObstacleGenerator : MonoBehaviour
         obstacle.name = "PrefabObstacle";
 
         // Destruye el obstaculo a los n segundos
-        try { Destroy(obstacle, 7f); } catch { print("Ya se habia destruido"); }
+        try { Destroy(obstacle, 10f); } catch { print("Ya se habia destruido"); }
 
 
     }

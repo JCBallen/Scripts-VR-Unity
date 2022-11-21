@@ -14,10 +14,11 @@ public class LevelDifficulty : MonoBehaviour
     }
     void Update()
     {
-        if (ShipMovement.distancia % 500 == 0 && aux < 0 && value < 20)
+        if (ShipMovement.distancia % 50 == 0 && aux < 0 && value < 20)
         {
             increaseDifficulty();
             aux = 100;
+            print("Dificultad aumentada");
         }
         else
         {
@@ -28,6 +29,8 @@ public class LevelDifficulty : MonoBehaviour
     void increaseDifficulty()
     {
         value++;
+        EnvMovement.velocidad -= (value * 0.5f);
+        ObsMovement.velocidad -= (value * 0.5f);
         // print($"hard: {value}");
     }
 }

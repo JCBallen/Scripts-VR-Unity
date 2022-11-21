@@ -22,7 +22,7 @@ public class VidasUI : MonoBehaviour
         {
             VidasTxt.text = $"Vidas: {ShipMovement.vidas}";
             PuntosTxt.text = $"Puntos: {ShipMovement.puntos}";
-            DistanciaTxt.text = $"fps {Mathf.Pow(Time.deltaTime,-1)}";
+            DistanciaTxt.text = $"{ShipMovement.distancia}";
             // DistanciaTxt.text = $"{ShipMovement.distancia}";
             // Si pasas el highscore muestralo en vivo 
             if (ShipMovement.distancia < ShipMovement.distanciaHS)
