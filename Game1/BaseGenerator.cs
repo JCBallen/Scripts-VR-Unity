@@ -26,36 +26,41 @@ public class BaseGenerator : MonoBehaviour
             aux = false;
         }
     }
-    // Start is called before the first frame update
+
+
     void spawnObs()
     {
-        // Limites de juego / de spawneo
-        randX = Random.Range(-5, 5);
-        aux = true;
-        // Encuentra el objeto bases para ser el padre
-        base_parent = GameObject.Find("Bases");
-        parent_transform = base_parent.transform;
+        if (BallMovement.numBases > -1)
+        { // Limites de juego / de spawneo
+            randX = Random.Range(-5, 5);
+            aux = true;
+            // Encuentra el objeto bases para ser el padre
+            base_parent = GameObject.Find("Bases");
+            parent_transform = base_parent.transform;
 
 
-        base_pos = transform.position;
-        base_pos.x = randX;
-        base_pos.y = -3;
-        base_pos.z = Ball.transform.position.z + 10; // distancia en la que aparecera el primer obs
+            base_pos = transform.position;
+            base_pos.x = randX;
+            base_pos.y = -3;
+            base_pos.z = Ball.transform.position.z + 10; // distancia en la que aparecera el primer obs
 
-        base_rot = Quaternion.Euler(0, 0, 0);
+            base_rot = Quaternion.Euler(0, 0, 0);
 
 
 
-        GameObject bases = Instantiate( // spawnaer un prefab
-                BasePrefab, // prefab
-                base_pos, // position
-                base_rot, // rotation
-                parent_transform); // padre
+            GameObject bases = Instantiate( // spawnaer un prefab
+                    BasePrefab, // prefab
+                    base_pos, // position
+                    base_rot, // rotation
+                    parent_transform); // padre
 
-        bases.name = "PrefabBase";
+            bases.name = "PrefabBase";
 
-        // Destruye la base a los n segundos
-        try { Destroy(bases, 5f); } catch { print("Ya se habia destruido"); }
+            // Destruye la base a los n segundos
+            try { Destroy(bases, 5f); } catch { print("Ya se habia destruido"); }
+
+            BallMovement.numBases += 1;
+        }
 
 
     }

@@ -16,12 +16,16 @@ public class BallMovement : MonoBehaviour
     public static int distancia;
     public static int distanciaHS;
 
+    public static int numBases;
+
     int d_camera_ball;
     // es la distancia en z entre la camara y la nave
     float x, y, auxTime, acumulatedTime, initialVel, acceleration;
 
     void Start()
     {
+        numBases = 0;
+
         distancia = 0;
         puntos = 0;
 
@@ -39,7 +43,7 @@ public class BallMovement : MonoBehaviour
         auxTime = Time.realtimeSinceStartup - acumulatedTime;
 
         x = d_camera_ball * Mathf.Tan(Mathf.PI * CameraRot.eulerAngles.y / 180);
-        
+
         y = -2.3f + initialVel * (auxTime) + acceleration * Mathf.Pow(auxTime, 2) / 2;
 
         if (transform.position.y <= -5 || BaseCollision.isColliding)

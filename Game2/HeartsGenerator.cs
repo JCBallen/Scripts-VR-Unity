@@ -42,7 +42,7 @@ public class HeartsGenerator : MonoBehaviour
         hearts_pos = transform.position;
         hearts_pos.x = randX;
         hearts_pos.y = randY;
-        hearts_pos.z = hearts_pos.z + 50; // distancia en la que aparece el primer punto
+        hearts_pos.z = hearts_pos.z + 200; // distancia en la que aparece el primer punto
 
         hearts_rot = Quaternion.Euler(0, 180, 0);
 
@@ -58,7 +58,7 @@ public class HeartsGenerator : MonoBehaviour
 
         // Destruye el obstaculo a los n segundos
 
-        try { Destroy(heart, 5f); } catch { print("Ya se habia destruido"); }
+        try { Destroy(heart, 10f); } catch { print("Ya se habia destruido"); }
 
 
 

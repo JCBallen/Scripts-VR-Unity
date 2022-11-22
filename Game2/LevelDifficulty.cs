@@ -6,19 +6,20 @@ public class LevelDifficulty : MonoBehaviour
 {
     public static int value;// valor de dificultad
     int aux;
+    bool isIncreasingvelocity;
 
     void Start()
     {
         aux = 100;
+        isIncreasingvelocity = false;
         value = 1;
     }
     void Update()
     {
-        if (ShipMovement.distancia % 50 == 0 && aux < 0 && value < 20)
+        if (ShipMovement.distancia % 10 == 0 && aux < 0 && value < 10)
         {
             increaseDifficulty();
             aux = 100;
-            print("Dificultad aumentada");
         }
         else
         {
@@ -28,9 +29,17 @@ public class LevelDifficulty : MonoBehaviour
 
     void increaseDifficulty()
     {
-        value++;
-        EnvMovement.velocidad -= (value * 0.5f);
-        ObsMovement.velocidad -= (value * 0.5f);
+        if (isIncreasingvelocity)
+        {
+            EnvMovement.velocidad -= (10);
+            ObsMovement.velocidad -= (10);
+            isIncreasingvelocity = false;
+        }
+        else
+        {
+            value++;
+            isIncreasingvelocity = true;
+        }
         // print($"hard: {value}");
     }
 }

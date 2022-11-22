@@ -42,7 +42,7 @@ public class PointsGenerator : MonoBehaviour
         points_pos = transform.position;
         points_pos.x = randX;
         points_pos.y = randY;
-        points_pos.z = points_pos.z + 50; // distancia en la que aparece el primer punto
+        points_pos.z = points_pos.z + 200; // distancia en la que aparece el primer punto
 
         points_rot = Quaternion.Euler(0, 0, 0);
 
@@ -58,7 +58,7 @@ public class PointsGenerator : MonoBehaviour
 
         // Destruye el obstaculo a los n segundos
 
-        try { Destroy(point, 5f); } catch { print("Ya se habia destruido"); }
+        try { Destroy(point, 10f); } catch { print("Ya se habia destruido"); }
 
 
 

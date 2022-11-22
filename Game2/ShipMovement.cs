@@ -6,7 +6,7 @@ public class ShipMovement : MonoBehaviour
 {
     public Transform CameraRot;
     public float t;
-    public float velocidad_maxima = 14f + (Mathf.Abs(EnvMovement.velocidad - 20f) * 2f); // aumento por tick de la posicion
+    public float velocidad_maxima = 14f + (Mathf.Abs(EnvMovement.velocidad - 20f) * 3f); // aumento por tick de la posicion
     public float inclinacion_maxima = 60f; // grados
     public float factor_rotacion = 1.5f; // Factor de rotacion
 
