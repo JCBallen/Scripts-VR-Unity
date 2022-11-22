@@ -16,6 +16,7 @@ public class BaseCollision : MonoBehaviour
         if (obj.tag == "Ship")
         {
             isColliding = true;
+            
         }
     }
 
