@@ -22,6 +22,6 @@ public class EnvMovement : MonoBehaviour
     {
         aum = new Vector3(0, 0, velocidad * Time.deltaTime); // default 20f
         transform.Translate(aum);
-        print(velocidad);
+        // print(velocidad);
     }
 }

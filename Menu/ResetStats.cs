@@ -8,6 +8,7 @@ public class ResetStats : MonoBehaviour
     {
         try
         {
+            PlayerPrefs.SetInt("HSDistanciaGame1", 0);
             PlayerPrefs.SetInt("HSDistanciaGame2", 0);
         }
         catch

@@ -20,6 +20,7 @@ public class DeathMenu : MonoBehaviour
 
     GameObject GazePointer;
     GameObject VidasUI;
+    
     // Start is called before the first frame update
     void Start()
     {

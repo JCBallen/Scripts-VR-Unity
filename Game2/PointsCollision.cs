@@ -8,6 +8,7 @@ public class PointsCollision : MonoBehaviour
     {
         if (obj.tag == "Ship")
         {
+            FindObjectOfType<AudioManager>().Play("CoinHit");
             Destroy(gameObject);
             ShipMovement.puntos++;
         }

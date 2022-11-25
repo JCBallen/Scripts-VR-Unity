@@ -15,6 +15,7 @@ public class BaseCollision : MonoBehaviour
     {
         if (obj.tag == "Ship")
         {
+            FindObjectOfType<AudioManager>().Play("Jump");
             isColliding = true;
             
         }

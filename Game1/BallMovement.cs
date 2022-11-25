@@ -8,9 +8,6 @@ public class BallMovement : MonoBehaviour
     public Transform CameraRot;
     public Animator animator;
     public float t;
-    public float velocidad_maxima = 10; // aumento por tick de la posicion
-    public float inclinacion_maxima = 45; // grados
-    public float factor_rotacion = 1.5f; // Factor de rotacion
 
     public static int vidas;
     public static int puntos;
@@ -25,6 +22,7 @@ public class BallMovement : MonoBehaviour
 
     void Start()
     {
+        vidas = 1;
         distancia = 0;
         puntos = 0;
 
@@ -35,6 +33,7 @@ public class BallMovement : MonoBehaviour
         acumulatedTime = 0;
 
         caux = 0;
+        Jump();
     }
 
     // Update is called once per frame
@@ -62,9 +61,15 @@ public class BallMovement : MonoBehaviour
 
 
         // temp if die
-        if (transform.position.y <= -5 || BaseCollision.isColliding)
+        if (BaseCollision.isColliding)
         {
             Jump();
+        }
+
+        if (transform.position.y <= -20)
+        {
+            vidas--;
+            // print(vidas);
         }
 
         // Movimiento suavizado con Lerp (a = desde , b = hasta)

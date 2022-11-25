@@ -8,6 +8,7 @@ public class HeartsCollision : MonoBehaviour
     {
         if (obj.tag == "Ship")
         {
+            FindObjectOfType<AudioManager>().Play("HeartHit");
             Destroy(gameObject);
             ShipMovement.vidas++;
         }

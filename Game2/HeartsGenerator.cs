@@ -58,7 +58,7 @@ public class HeartsGenerator : MonoBehaviour
 
         // Destruye el obstaculo a los n segundos
 
-        try { Destroy(heart, 10f); } catch { print("Ya se habia destruido"); }
+        try { Destroy(heart, 12f); } catch { print("Ya se habia destruido"); }
 
 
 

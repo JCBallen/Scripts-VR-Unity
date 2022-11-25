@@ -8,14 +8,14 @@ public class BorderLimits : MonoBehaviour
     public static bool isInYLimits;
     public GameObject Camara;
     GameObject Nave;
-    ShipMovement ShipMovementScript;
+    // ShipMovement ShipMovementScript;
     // Start is called before the first frame update
     void Start()
     {
         isInXLimits = false;
         isInYLimits = false;
         Nave = GameObject.FindGameObjectWithTag("Ship");
-        ShipMovementScript = Nave.GetComponent<ShipMovement>();
+        // ShipMovementScript = Nave.GetComponent<ShipMovement>();
     }
 
     // Update is called once per frame

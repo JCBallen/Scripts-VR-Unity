@@ -57,12 +57,6 @@ public class PointsGenerator : MonoBehaviour
         point.name = "PrefabPoint";
 
         // Destruye el obstaculo a los n segundos
-
-        try { Destroy(point, 10f); } catch { print("Ya se habia destruido"); }
-
-
-
+        try { Destroy(point, 12f); } catch { print("Ya se habia destruido"); }
     }
-
-
 }

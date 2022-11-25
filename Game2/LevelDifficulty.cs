@@ -16,7 +16,7 @@ public class LevelDifficulty : MonoBehaviour
     }
     void Update()
     {
-        if (ShipMovement.distancia % 10 == 0 && aux < 0 && value < 10)
+        if (ShipMovement.distancia % 1000 == 0 && aux < 0 && value < 12)
         {
             increaseDifficulty();
             aux = 100;
@@ -31,15 +31,16 @@ public class LevelDifficulty : MonoBehaviour
     {
         if (isIncreasingvelocity)
         {
+            // ? incrementa la velocidad de la nave
             EnvMovement.velocidad -= (10);
             ObsMovement.velocidad -= (10);
             isIncreasingvelocity = false;
         }
         else
         {
+            // ? incrementa el spawn rate de los obstaculos
             value++;
             isIncreasingvelocity = true;
         }
-        // print($"hard: {value}");
     }
 }
