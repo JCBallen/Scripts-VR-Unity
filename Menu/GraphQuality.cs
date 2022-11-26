@@ -12,11 +12,13 @@ public class GraphQuality : MonoBehaviour
     public void HighQL()
     {
         isHighQL = true;
+        FindObjectOfType<AudioManager>().Play("Selection");
     }
 
     public void LowQL()
     {
         isHighQL = false;
+        FindObjectOfType<AudioManager>().Play("Selection");
     }
 
     void Update()

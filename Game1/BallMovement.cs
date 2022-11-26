@@ -13,11 +13,12 @@ public class BallMovement : MonoBehaviour
     public static int puntos;
     public static int distancia;
     public static int distanciaHS;
+    public static float acceleration;
     int caux;
 
     // es la distancia en z entre la camara y la nave
     int d_camera_ball;
-    float x, y, auxTime, acumulatedTime, initialVel, acceleration;
+    float x, y, auxTime, acumulatedTime, initialVel;
 
 
     void Start()
@@ -66,17 +67,16 @@ public class BallMovement : MonoBehaviour
             Jump();
         }
 
+        // death
         if (transform.position.y <= -20)
         {
             vidas--;
-            // print(vidas);
         }
 
         // Movimiento suavizado con Lerp (a = desde , b = hasta)
         Vector3 a = transform.position;
         Vector3 b = new Vector3(x, y, transform.position.z);
         transform.position = Vector3.Lerp(a, b, t);
-
 
     }
 

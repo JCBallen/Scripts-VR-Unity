@@ -32,7 +32,8 @@ public class UIElementXR : MonoBehaviour
         ExecuteEvents.Execute(this.gameObject, pointerEvent, ExecuteEvents.pointerDownHandler);
     }
 
-    public void OnPointerExitXR(){
+    public void OnPointerExitXR()
+    {
         GazeManager.Instance.SetUpGaze(2.5f);
         OnXRPointerExit?.Invoke();
         PointerEventData pointerEvent = PlacePointer();
