@@ -28,3 +28,4 @@ public class BaseMovement : MonoBehaviour
         BallMovement.distancia = -(int)BasePos.position.z + 1; // desfase para igualar a 0
     }
 }
+
