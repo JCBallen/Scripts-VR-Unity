@@ -26,7 +26,6 @@ public class HUDUI : MonoBehaviour
             else
             {
                 HighTxt.text = $"Max: {BallMovement.distancia}";
-
             }
         }
         catch
