@@ -20,7 +20,7 @@ public class DeathMenu : MonoBehaviour
 
     GameObject GazePointer;
     GameObject VidasUI;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -61,6 +61,7 @@ public class DeathMenu : MonoBehaviour
         if (ShipMovement.distancia > ShipMovement.distanciaHS)
         {
             PlayerPrefs.SetInt("HSDistanciaGame2", ShipMovement.distancia);
+            // PlayerPrefs.setString("TipoCabello","churcos");
             PlayerPrefs.Save();
             ShipMovement.distanciaHS = PlayerPrefs.GetInt("HSDistanciaGame2", 0);
         }
@@ -72,7 +73,7 @@ public class DeathMenu : MonoBehaviour
         EnvMovement.velocidad = 0f;
         ObsMovement.velocidad = 0f;
         // Time.timeScale = 1f;
-        
+
         // Paso op para eliminar todos los bloques de trigger y que no me bugee el menu de muerte
         triggers_terrain_generator = GameObject.FindGameObjectsWithTag("TriggerBlock");
         foreach (GameObject trigger in triggers_terrain_generator)

@@ -9,6 +9,7 @@ public class ResetStats : MonoBehaviour
         try
         {
             FindObjectOfType<AudioManager>().Play("Selection");
+
             PlayerPrefs.SetInt("HSDistanciaGame1", 0);
             PlayerPrefs.SetInt("HSDistanciaGame2", 0);
         }

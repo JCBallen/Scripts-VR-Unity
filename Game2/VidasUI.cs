@@ -19,7 +19,7 @@ public class VidasUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ShipMovement.distanciaHS = PlayerPrefs.GetInt("HSDistanciaGame2", 0);
+        ShipMovement.distanciaHS = PlayerPrefs.GetInt("HSDistanciaGame2",0);
 
         auxVidasCount = 3;
         auxPuntosCount = 0;
